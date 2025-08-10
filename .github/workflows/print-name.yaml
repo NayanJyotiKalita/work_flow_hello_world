@@ -1,0 +1,16 @@
+name: print-name
+
+on:
+  push:
+    branches: 
+      - main
+    paths:
+      - .github/workflows/print-name
+
+jobs:
+  printing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Printing the workflow
+        run: echo "I am printing here"
+      
