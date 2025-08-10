@@ -1,7 +1,10 @@
 name: access_id_workflow
 
-on: push
-
+on: 
+  push:
+    paths:
+      - .github/workflows/access_id_workflow.yaml
+        
 jobs:
   access:
     runs-on: ubuntu-latest
