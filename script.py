@@ -1,4 +1,5 @@
 def greet(name):
-  print(f"Hello, {name}!") 
+  print(f"Hello, {name}!")  # Things look good now
 
-greet("John")  # There's still one blank line between the fucntion definition and the call to the fucntion
+
+greet("John")
