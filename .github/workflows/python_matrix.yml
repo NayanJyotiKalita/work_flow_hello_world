@@ -3,7 +3,6 @@ name: Python Matrix
 on:
   push:
     branches:
-      - main
       - .github/workflows/python_matrix.yml
   pull_request:
      branches:
