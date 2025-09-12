@@ -28,5 +28,8 @@ jobs:
         with:
           name: sample-text
           path: artifact
+      - name: List artifact directory
+        run: ls -l artifact
       - name: Display Artifact Content
         run: cat artifact/sample.txt
+  
