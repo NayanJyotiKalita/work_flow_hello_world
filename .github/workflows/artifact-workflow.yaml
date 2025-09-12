@@ -32,4 +32,4 @@ jobs:
           path: ./artifact
 
       - name: Display Artifact Content
-        run: echo "Artifact-Content - $(cat ./artifact/sample.txt)" 
+        run: cat ./artifact/sample.txt
