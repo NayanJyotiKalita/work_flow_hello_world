@@ -9,6 +9,9 @@ jobs:
   create_artifact:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
       - name: Create sample.txt
         run: echo "Sample artifact content" > sample.txt
 
