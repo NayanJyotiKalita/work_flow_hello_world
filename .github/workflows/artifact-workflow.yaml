@@ -9,12 +9,10 @@ jobs:
   create_artifact:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code    
         uses: actions/checkout@v4
-        
       - name: Create sample.txt
         run: echo "Sample artifact content" > sample.txt
-
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -29,7 +27,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: sample-text
-          path: ./artifact
-
+          path: artifact
       - name: Display Artifact Content
-        run: echo "$(cat ./artifact/sample.txt)"
+        run: cat artifact/sample.txt
