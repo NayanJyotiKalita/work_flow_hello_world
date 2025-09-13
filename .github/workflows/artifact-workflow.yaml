@@ -3,7 +3,7 @@ name: Artifact Workflow
 on:
   push:
     branches:
-      - main
+      - main 
 
 jobs:
   create_artifact:
