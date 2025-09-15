@@ -11,8 +11,10 @@ jobs:
     steps:
       - name: Checkout Code    
         uses: actions/checkout@v4
+        
       - name: Create sample.txt
         run: echo Sample artifact content > sample.txt
+        
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -28,7 +30,9 @@ jobs:
         with:
           name: sample-text
           path: artifact
+          
       # - name: List artifact directory
       #   run: ls -l artifact
+      
       - name: Display Artifact Content
         run: cat artifact/sample.txt
