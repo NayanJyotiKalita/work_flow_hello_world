@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Code    
         uses: actions/checkout@v4
       - name: Create sample.txt
-        run: echo "Sample artifact content" > sample.txt
+        run: echo Sample artifact content > sample.txt
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
