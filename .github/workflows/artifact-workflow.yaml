@@ -1,4 +1,4 @@
-name: Artifact Workflow 
+name: Artifact Workflow
 
 on:
   push:
