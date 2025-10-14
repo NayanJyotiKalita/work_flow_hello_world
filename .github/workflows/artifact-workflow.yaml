@@ -1,40 +1,35 @@
-name: Artifact Workflow
+name: Job Artifacts and Outputs
 
 on:
   push:
     branches:
-      - main 
-    # paths:
-    #  - .github/workflows/aritfact-workflow.yaml
+      - main
+  workflow_dispatch:
 
 jobs:
   create_artifact:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code    
+      - name: Checkout repository
         uses: actions/checkout@v4
-        
-      - name: Create sample.txt
-        run: echo Sample artifact content > sample.txt
-        
-      - name: Upload Artifact
+
+      - name: Create a sample text file
+        run: echo "Sample artifact content" > sample.txt
+
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: sample-text
           path: sample.txt
 
   use_artifact:
-    needs: create_artifact
     runs-on: ubuntu-latest
+    needs: create_artifact
     steps:
-      - name: Download Artifact
+      - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: sample-text
-          path: artifact
-          
-      # - name: List artifact directory
-      #   run: ls -l artifact
-      
-      - name: Display Artifact Content
-        run: cat artifact/sample.txt
+
+      - name: Display artifact content
+        run: cat sample.txt
